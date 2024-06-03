@@ -2,7 +2,7 @@
 class Prodotto {
     private string $nome;
     private string $marca;
-    private int $prezzo;
+    private float $prezzo;
     private string $immagine;
     private bool $disponibilita;
 
