@@ -19,7 +19,7 @@ $prodotti[] = $prodotto1;
 $prodotto2 = new Sub_categoria("Cibo", "Gatto");
 $prodotto2->setNome("Gourmet");
 $prodotto2->setMarca("Purina");
-$prodotto2->setPrezzo(2.50);
+$prodotto2->setPrezzo(-2.50);
 $prodotto2->setImg("https://www.tigota.it/media/catalog/product/b/i/big_396751_847948_01_gdvz6ifbduwvg7jh.jpg");
 $prodotto2->setDisp(true);
 
@@ -69,7 +69,13 @@ $prodotti[] = $prodotto4;
                             <h5 class="card-title"><?php echo $cur_prodotto->getNome() ?></h5>
                             <p class="card-text m-0">Marca - <?php echo $cur_prodotto->getMarca() ?></p>
                             <p class="card-text m-0">Categoria - <?php echo $cur_prodotto->getSubCategoria() . " per " . $cur_prodotto->getCategoria() ?></p>
-                            <p class="card-text m-0"> Prezzo - <?php echo $cur_prodotto->getPrezzo() ?> </p>
+                            <p class="card-text m-0"> Prezzo - 
+                            <?php
+                                try {
+                                    $cur_prodotto->getPrezzo() ;
+                                } catch (Exception $e) {
+                                    echo($e->getMessage());
+                                }?> </p>
                             <p>Disponibilità - <?php echo $cur_prodotto->getDisp() ? "Si" : "No" ?></p>
                         </div>
                     </div>

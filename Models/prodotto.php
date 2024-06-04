@@ -34,7 +34,11 @@ class Prodotto {
 
     // GETTER PREZZO
     public function getPrezzo () {
-        return $this->prezzo . "€";
+        if ($this->prezzo < 0) {
+            throw new Exception ("<strong>Il prezzo deve essere maggiore di 0€</strong>");
+        } else {
+            echo $this->prezzo . "€";
+        }
     }
 
     // SETTER IMMAGINE
