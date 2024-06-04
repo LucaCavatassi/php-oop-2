@@ -1,21 +1,13 @@
 <?php 
+require_once __DIR__ . "/nome.php";
+
 class Prodotto {
-    private string $nome;
+    use Nome;
     private string $marca;
     private float $prezzo;
     private string $immagine;
     private bool $disponibilita;
 
-
-    // SETTER NOME
-    public function setNome (string $_nome) {
-        $this->nome = $_nome;
-    }
-
-    // GETTER NOME
-    public function getNome () {
-        return $this->nome;
-    }
 
     // SETTER MARCA
     public function setMarca (string $_marca) {
